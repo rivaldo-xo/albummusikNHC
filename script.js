@@ -161,13 +161,3 @@ var swiper = new Swiper(".swiper", {
     prevEl: ".backward",
   },
 });
-
-function playSong() {
-  song.play().then(() => {
-    console.log("Playing success");
-  }).catch((error) => {
-    console.error("Play failed:", error);
-  });
-  controlIcon.classList.add("fa-pause");
-  controlIcon.classList.remove("fa-play");
-}
