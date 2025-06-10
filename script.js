@@ -24,7 +24,7 @@ const songs = [
     title: "Out Of My League",
     name: "chelly",
     source:
-      "./Song6.mp3",
+      "./song6.mp3",
   },
   {
     title: "AEAO",
@@ -36,7 +36,7 @@ const songs = [
     title: "Sesame Syrup",
     name: "Amm Rockpank",
     source:
-      "./Song9.mp3",
+      "./song9.mp3",
   },
   {
     title: "Forgot Password",
@@ -48,14 +48,14 @@ const songs = [
     title: "Somebody's Pleasure",
     name: "𝑫𝒂𝒏𝒊𝒆𝒍 𝑨𝒍𝒆𝒙𝒂𝒏𝒅𝒆𝒓 𝑪𝒂𝒌𝒆𝒑",
     source:
-      "./Song4.mp3",
+      "./song4.mp3",
   },
 
   {
     title: "EXILE",
     name: "hee imup",
     source:
-      "./Song10.mp3",
+      "./song10.mp3",
   },
   {
     title: "Last Night on Earth",
