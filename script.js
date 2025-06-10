@@ -8,18 +8,19 @@ const songName = document.querySelector(".music-player h1");
 const artistName = document.querySelector(".music-player p");
 
 const songs = [
-  { title: "Aku Milikmu", name: "florine", source: "Song3.mp3" },
-  { title: "Die For You", name: "The Weekend Edgar", source: "Song8.mp3" },
-  { title: "Out Of My League", name: "chelly", source: "Song6.mp3" },
-  { title: "AEAO", name: "VAL DynamicDuo", source: "Song1.mp3" },
-  { title: "Sesame Syrup", name: "Amm Rockpank", source: "Song9.mp3" },
-  { title: "Forgot Password", name: "Nasya Del Rey", source: "Song7.mp3" },
-  { title: "Somebody's Pleasure", name: "𝑫𝒂𝒏𝒊𝒆𝒍 𝑨𝒍𝒆𝒙𝒂𝒏𝒅𝒆𝒓 𝑪𝒂𝒌𝒆𝒑", source: "Song4.mp3" },
-  { title: "EXILE", name: "hee imup", source: "Song10.mp3" },
-  { title: "Last Night on Earth", name: "Liara Rockpank", source: "Song11.mp3" },
-  { title: "Kangen Dewa 19", name: "Cikakuki Punya Dilan", source: "Song2.mp3" },
-  { title: "BIRDS OF A FEATHER", name: "Keyyzz Ackerman", source: "Song5.mp3" },
+  { title: "Aku Milikmu", name: "florine", source: "./song3.mp3" },
+  { title: "Die For You", name: "The Weekend Edgar", source: "./song8.mp3" },
+  { title: "Out Of My League", name: "chelly", source: "./song6.mp3" },
+  { title: "AEAO", name: "VAL DynamicDuo", source: "./song1.mp3" },
+  { title: "Sesame Syrup", name: "Amm Rockpank", source: "./song9.mp3" },
+  { title: "Forgot Password", name: "Nasya Del Rey", source: "./song7.mp3" },
+  { title: "Somebody's Pleasure", name: "Daniel Alexander Cakep", source: "./song4.mp3" },
+  { title: "EXILE", name: "hee imup", source: "./song10.mp3" },
+  { title: "Last Night on Earth", name: "Liara Rockpank", source: "./song11.mp3" },
+  { title: "Kangen Dewa 19", name: "Cikakuki Punya Dilan", source: "./song2.mp3" },
+  { title: "BIRDS OF A FEATHER", name: "Keyyzz Ackerman", source: "./song5.mp3" },
 ];
+
 
 let currentSongIndex = 3;
 let isSwitchingSong = false;
