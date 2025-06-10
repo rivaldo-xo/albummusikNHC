@@ -8,37 +8,83 @@ const songName = document.querySelector(".music-player h1");
 const artistName = document.querySelector(".music-player p");
 
 const songs = [
-  { title: "Aku Milikmu", name: "florine", source: "./song3.mp3" },
-  { title: "Die For You", name: "The Weekend Edgar", source: "./song8.mp3" },
-  { title: "Out Of My League", name: "chelly", source: "./song6.mp3" },
-  { title: "AEAO", name: "VAL DynamicDuo", source: "./song1.mp3" },
-  { title: "Sesame Syrup", name: "Amm Rockpank", source: "./song9.mp3" },
-  { title: "Forgot Password", name: "Nasya Del Rey", source: "./song7.mp3" },
-  { title: "Somebody's Pleasure", name: "Daniel Alexander Cakep", source: "./song4.mp3" },
-  { title: "EXILE", name: "hee imup", source: "./song10.mp3" },
-  { title: "Last Night on Earth", name: "Liara Rockpank", source: "./song11.mp3" },
-  { title: "Kangen Dewa 19", name: "Cikakuki Punya Dilan", source: "./song2.mp3" },
-  { title: "BIRDS OF A FEATHER", name: "Keyyzz Ackerman", source: "./song5.mp3" },
+  {
+    title: "Aku Milikmu",
+    name: "florine",
+    source:
+      "./song3.mp3",
+  },
+  {
+    title: "Die For You",
+    name: "The Weekend Edgar",
+    source:
+      "./song8.mp3",
+  },
+  {
+    title: "Out Of My League",
+    name: "chelly",
+    source:
+      "./Song6.mp3",
+  },
+  {
+    title: "AEAO",
+    name: "VAL DynamicDuo",
+    source:
+      "./song1.mp3",
+  },
+  {
+    title: "Sesame Syrup",
+    name: "Amm Rockpank",
+    source:
+      "./Song9.mp3",
+  },
+  {
+    title: "Forgot Password",
+    name: "Nasya Del Rey",
+    source:
+      "./song7.mp3",
+  },
+  {
+    title: "Somebody's Pleasure",
+    name: "𝑫𝒂𝒏𝒊𝒆𝒍 𝑨𝒍𝒆𝒙𝒂𝒏𝒅𝒆𝒓 𝑪𝒂𝒌𝒆𝒑",
+    source:
+      "./Song4.mp3",
+  },
+
+  {
+    title: "EXILE",
+    name: "hee imup",
+    source:
+      "./Song10.mp3",
+  },
+  {
+    title: "Last Night on Earth",
+    name: "Liara Rockpank",
+    source:
+      "./song11.mp3",
+  },
+  {
+    title: "Kangen Dewa 19",
+    name: "Cikakuki Punya Dilan",
+    source:
+      "./song2.mp3",
+  },
+  {
+    title: "BIRDS OF A FEATHER",
+    name: "Keyyzz Ackerman",
+    source:
+      "./song5.mp3",
+  },
 ];
 
-
 let currentSongIndex = 3;
-let isSwitchingSong = false;
 
 function updateSongInfo() {
   songName.textContent = songs[currentSongIndex].title;
   artistName.textContent = songs[currentSongIndex].name;
-
-  isSwitchingSong = true;
-  song.pause(); // berhenti dulu
   song.src = songs[currentSongIndex].source;
-  song.load();
 
-  // Tunggu lagu siap diputar
-  song.oncanplaythrough = () => {
-    playSong();
-    isSwitchingSong = false;
-  };
+  song.addEventListener("loadeddata", function () {});
 }
 
 song.addEventListener("timeupdate", function () {
@@ -59,20 +105,13 @@ function pauseSong() {
 }
 
 function playSong() {
-  if (!isSwitchingSong && song.readyState >= 2) {
-    song.play().then(() => {
-      console.log("Playing success");
-    }).catch((error) => {
-      console.error("Play failed:", error);
-    });
-
-    controlIcon.classList.add("fa-pause");
-    controlIcon.classList.remove("fa-play");
-  }
+  song.play();
+  controlIcon.classList.add("fa-pause");
+  controlIcon.classList.remove("fa-play");
 }
 
 function playPause() {
-  if (song.paused && !isSwitchingSong) {
+  if (song.paused) {
     playSong();
   } else {
     pauseSong();
@@ -92,16 +131,17 @@ progress.addEventListener("change", function () {
 forwardButton.addEventListener("click", function () {
   currentSongIndex = (currentSongIndex + 1) % songs.length;
   updateSongInfo();
+  playPause();
 });
 
 backwardButton.addEventListener("click", function () {
   currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
   updateSongInfo();
+  playPause();
 });
 
 updateSongInfo();
 
-// Swiper setup (tidak perlu diubah)
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   centeredSlides: true,
@@ -121,3 +161,13 @@ var swiper = new Swiper(".swiper", {
     prevEl: ".backward",
   },
 });
+
+function playSong() {
+  song.play().then(() => {
+    console.log("Playing success");
+  }).catch((error) => {
+    console.error("Play failed:", error);
+  });
+  controlIcon.classList.add("fa-pause");
+  controlIcon.classList.remove("fa-play");
+}
