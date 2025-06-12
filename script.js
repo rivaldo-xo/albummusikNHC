@@ -57,11 +57,26 @@ const songs = [
     source:
       "./song10.mp3",
   },
+  
   {
     title: "Last Night on Earth",
     name: "Liara Rockpank",
     source:
       "./song11.mp3",
+  },
+
+  {
+    title: "MEMBASUH",
+    name: "Sherlok",
+    source:
+      "./song12.mp3",
+  },
+
+  {
+    title: "One Of The Girls",
+    name: "xeexsaa__",
+    source:
+      "./song13.mp3",
   },
   {
     title: "Kangen Dewa 19",
@@ -145,7 +160,7 @@ updateSongInfo();
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   centeredSlides: true,
-  initialSlide: 5,
+  initialSlide: 6,
   slidesPerView: "auto",
   allowTouchMove: false,
   spaceBetween: 40,
